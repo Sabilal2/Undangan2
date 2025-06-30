@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Wedding of Daniel & Maya</title>
+    <meta name="description" content="Join us as we celebrate our love on August 20, 2025 at The Crystal Gardens, Chicago">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'serif': ['Playfair Display', 'serif'],
+                        'sans': ['Montserrat', 'sans-serif'],
+                    },
+                    colors: {
+                        'gold': '#d4af37',
+                        'cream': '#f5f5f0',
+                        'blush': '#f8e5e5',
+                    }
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .animate-fade-in {
+                animation: fadeIn 1.5s ease-in-out;
+            }
+            @keyframes fadeIn {
+                from { opacity: 0; }
+                to { opacity: 1; }
+            }
+            .animate-slide-up {
+                animation: slideUp 1s ease-out;
+            }
+            @keyframes slideUp {
+                from { 
+                    opacity: 0;
+                    transform: translateY(20px);
+                }
+                to { 
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+            .music-player {
+                transition: all 0.3s ease;
+            }
+            .music-player.paused {
+                opacity: 0.7;
+            }
+            .journey-carousel {
+                scroll-snap-type: x mandatory;
+            }
+            .journey-slide {
+                scroll-snap-align: start;
+            }
+            .like-animation {
+                animation: likeHeart 0.6s ease-out;
+            }
+            @keyframes likeHeart {
+                0% { transform: scale(1); opacity: 0; }
+                50% { transform: scale(1.5); opacity: 0.8; }
+                100% { transform: scale(1); opacity: 1; }
+            }
+        }
+    </style>
+</head>
+<body class="bg-cream font-sans text-gray-700">
+    <!-- Music Player -->
+    <div id="music-player" class="fixed bottom-4 right-4 z-50 bg-white p-3 rounded-full shadow-lg music-player cursor-pointer hover:shadow-xl" title="Play/Pause Music">
+        <svg id="play-icon" xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-gold" viewBox="0 0 20 20" fill="currentColor">
+            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd" />
+        </svg>
+        <svg id="pause-icon" xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-gold hidden" viewBox="0 0 20 20" fill="currentColor">
+            <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zM7 8a1 1 0 012 0v4a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v4a1 1 0 102 0V8a1 1 0 00-1-1z" clip-rule="evenodd" />
+        </svg>
+        <audio id="wedding-music" loop>
+            <source src="The Police - Every Breath You Take (Lyrics).mp3" type="audio/mpeg">
+        </audio>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="relative h-screen flex items-center justify-center bg-blush overflow-hidden">
+        <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1523438885200-e635ba2c371e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80')] bg-cover bg-center opacity-30 blur-sm"></div>
+        <div class="relative z-10 text-center px-4 animate-fade-in">
+            <h1 class="text-4xl md:text-6xl font-serif font-medium text-gray-800 mb-4">The Wedding of</h1>
+            <h2 class="text-5xl md:text-7xl font-serif font-bold text-gold mb-8">Daniel & Maya</h2>
+            <div class="text-xl md:text-2xl text-gray-700">
+                <p>August 20, 2025</p>
+                <p class="mt-2">The Crystal Gardens • Chicago</p>
+            </div>
+        </div>
+        <div class="absolute bottom-10 left-0 right-0 text-center">
+            <a href="#couple" class="inline-block animate-bounce">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-gold" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+                </svg>
+            </a>
+        </div>
+    </section>
+
+    <!-- Bride & Groom Section -->
+    <section id="couple" class="py-20 px-4 max-w-6xl mx-auto scroll-mt-16">
+        <h2 class="text-3xl md:text-4xl font-serif font-medium text-center text-gray-800 mb-16 animate-slide-up">Bride & Groom</h2>
+        
+        <div class="flex flex-col md:flex-row gap-12 md:gap-8 items-center justify-center">
+            <!-- Groom Card -->
+            <div class="w-full md:w-1/2 bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 animate-slide-up">
+                <div class="w-48 h-48 mx-auto mb-6 rounded-full overflow-hidden border-4 border-gold">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80" 
+                         alt="Groom" class="w-full h-full object-cover">
+                </div>
+                <h3 class="text-2xl font-serif font-medium text-center text-gray-800 mb-2">Daniel Christopher</h3>
+                <p class="text-center text-gray-600 mb-4">Son of</p>
+                <p class="text-center text-gray-700">Mr. & Mrs. Richard Christopher</p>
+            </div>
+            
+            <!-- Heart Divider -->
+            <div class="my-4 md:my-0 animate-fade-in">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-gold" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clip-rule="evenodd" />
+                </svg>
+            </div>
+            
+            <!-- Bride Card -->
+            <div class="w-full md:w-1/2 bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 animate-slide-up">
+                <div class="w-48 h-48 mx-auto mb-6 rounded-full overflow-hidden border-4 border-gold">
+                    <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1064&q=80" 
+                         alt="Bride" class="w-full h-full object-cover">
+                </div>
+                <h3 class="text-2xl font-serif font-medium text-center text-gray-800 mb-2">Maya Elizabeth</h3>
+                <p class="text-center text-gray-600 mb-4">Daughter of</p>
+                <p class="text-center text-gray-700">Mr. & Mrs. Benjamin Parker</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Instagram-Style Journey Section -->
+    <section id="journey" class="py-20 px-4 bg-white scroll-mt-16">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-3xl md:text-4xl font-serif font-medium text-center text-gray-800 mb-16 animate-slide-up">Our Journey</h2>
+            
+            <!-- Journey Carousel -->
+            <div class="relative">
+                <div class="journey-carousel flex overflow-x-auto snap-x snap-mandatory scrollbar-hide pb-8 -mx-4 px-4" id="journey-carousel">
+                    <!-- Slide 1 -->
+                    <div class="journey-slide flex-shrink-0 w-full sm:w-4/5 md:w-2/3 lg:w-1/2 px-4">
+                        <div class="bg-white rounded-xl shadow-md overflow-hidden">
+                            <div class="relative">
+                                <img src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80" 
+                                     alt="Couple at beach" class="w-full h-64 md:h-80 object-cover">
+                                <div class="absolute top-4 right-4">
+                                    <button class="like-btn bg-white bg-opacity-80 rounded-full p-2" data-id="1">
+                                        <i class="far fa-heart text-2xl text-gray-700"></i>
+                                        <i class="fas fa-heart text-2xl text-red-500 hidden"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="p-4">
+                                <div class="flex items-center mb-3">
+                                    <div class="w-10 h-10 rounded-full bg-gold flex items-center justify-center text-white font-bold mr-3">D</div>
+                                    <div>
+                                        <h4 class="font-medium">danielandmaya</h4>
+                                        <p class="text-xs text-gray-500">Beach vacation, June 2023</p>
+                                    </div>
+                                </div>
+                                <p class="text-gray-700 mb-3">Our first trip together to the Maldives. The beginning of forever. 💕</p>
+                                <div class="flex items-center text-sm text-gray-500">
+                                    <span class="like-count mr-4" data-id="1">124 likes</span>
+                                    <button class="view-comments" data-id="1">View 18 comments</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Slide 2 -->
+                    <div class="journey-slide flex-shrink-0 w-full sm:w-4/5 md:w-2/3 lg:w-1/2 px-4">
+                        <div class="bg-white rounded-xl shadow-md overflow-hidden">
+                            <div class="relative">
+                                <img src="https://images.unsplash.com/photo-1494774157365-9e04c6720e47?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80" 
+                                     alt="Couple laughing" class="w-full h-64 md:h-80 object-cover">
+                                <div class="absolute top-4 right-4">
+                                    <button class="like-btn bg-white bg-opacity-80 rounded-full p-2" data-id="2">
+                                        <i class="far fa-heart text-2xl text-gray-700"></i>
+                                        <i class="fas fa-heart text-2xl text-red-500 hidden"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="p-4">
+                                <div class="flex items-center mb-3">
+                                    <div class="w-10 h-10 rounded-full bg-gold flex items-center justify-center text-white font-bold mr-3">M</div>
+                                    <div>
+                                        <h4 class="font-medium">danielandmaya</h4>
+                                        <p class="text-xs text-gray-500">Sunday brunch, March 2024</p>
+                                    </div>
+                                </div>
+                                <p class="text-gray-700 mb-3">That morning when we laughed so hard we cried. These are the moments I'll cherish forever.</p>
+                                <div class="flex items-center text-sm text-gray-500">
+                                    <span class="like-count mr-4" data-id="2">89 likes</span>
+                                    <button class="view-comments" data-id="2">View 12 comments</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Slide 3 -->
+                    <div class="journey-slide flex-shrink-0 w-full sm:w-4/5 md:w-2/3 lg:w-1/2 px-4">
+                        <div class="bg-white rounded-xl shadow-md overflow-hidden">
+                            <div class="relative">
+                                <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80" 
+                                     alt="Engagement photo" class="w-full h-64 md:h-80 object-cover">
+                                <div class="absolute top-4 right-4">
+                                    <button class="like-btn bg-white bg-opacity-80 rounded-full p-2" data-id="3">
+                                        <i class="far fa-heart text-2xl text-gray-700"></i>
+                                        <i class="fas fa-heart text-2xl text-red-500 hidden"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="p-4">
+                                <div class="flex items-center mb-3">
+                                    <div class="w-10 h-10 rounded-full bg-gold flex items-center justify-center text-white font-bold mr-3">D</div>
+                                    <div>
+                                        <h4 class="font-medium">danielandmaya</h4>
+                                        <p class="text-xs text-gray-500">Engagement, December 2024</p>
+                                    </div>
+                                </div>
+                                <p class="text-gray-700 mb-3">She said YES! The happiest day of my life. 💍</p>
+                                <div class="flex items-center text-sm text-gray-500">
+                                    <span class="like-count mr-4" data-id="3">256 likes</span>
+                                    <button class="view-comments" data-id="3">View 42 comments</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Navigation Arrows -->
+                <button class="journey-prev absolute left-0 top-1/2 -translate-y-1/2 -translate-x-2 bg-white rounded-full p-2 shadow-md hover:bg-gray-100 z-10 hidden md:block">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gold" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                    </svg>
+                </button>
+                <button class="journey-next absolute right-0 top-1/2 -translate-y-1/2 translate-x-2 bg-white rounded-full p-2 shadow-md hover:bg-gray-100 z-10 hidden md:block">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gold" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                    </svg>
+                </button>
+            </div>
+            
+            <!-- Comment Modal -->
+            <div id="comment-modal" class="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center hidden">
+                <div class="bg-white rounded-lg max-w-md w-full max-h-[80vh] overflow-hidden">
+                    <div class="p-4 border-b flex justify-between items-center">
+                        <h3 class="font-serif font-medium">Comments</h3>
+                        <button id="close-comment-modal" class="text-gray-500 hover:text-gray-700">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                            </svg>
+                        </button>
+                    </div>
+                    <div id="modal-comments-container" class="p-4 overflow-y-auto max-h-[50vh]">
+                        <!-- Comments will be loaded here -->
+                        <div class="comment flex mb-4">
+                            <div class="w-10 h-10 rounded-full bg-gray-300 flex items-center justify-center text-white font-bold mr-3">A</div>
+                            <div>
+                                <h4 class="font-medium">Anna Smith</h4>
+                                <p class="text-gray-700">You two are perfect together! So happy for you!</p>
+                                <p class="text-xs text-gray-500">2 hours ago</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-4 border-t">
+                        <form id="modal-comment-form" class="flex">
+                            <input type="text" id="modal-comment-text" placeholder="Add a comment..." class="flex-grow px-4 py-2 border border-gray-300 rounded-l-full focus:outline-none focus:ring-1 focus:ring-gold">
+                            <button type="submit" class="px-4 py-2 bg-gold text-white rounded-r-full hover:bg-opacity-90">Post</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Event Details Section -->
+    <section id="events" class="py-20 px-4 bg-blush scroll-mt-16">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-3xl md:text-4xl font-serif font-medium text-center text-gray-800 mb-16 animate-slide-up">Event Details</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <!-- Ceremony -->
+                <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 animate-slide-up">
+                    <div class="flex items-center mb-6">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-gold mr-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                        <h3 class="text-2xl font-serif font-medium text-gray-800">Wedding Ceremony</h3>
+                    </div>
+                    <div class="pl-14">
+                        <p class="text-lg text-gray-700 mb-2">Thursday, August 20, 2025</p>
+                        <p class="text-lg text-gray-700 mb-2">2:00 PM - 4:00 PM</p>
+                        <p class="text-gray-600 mb-6">The Crystal Gardens, 500 Lake Shore Drive, Chicago</p>
+                        <a href="https://maps.google.com" target="_blank" class="inline-block px-6 py-2 bg-gold text-white rounded-full hover:bg-opacity-90 transition duration-300">
+                            View Location
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Reception -->
+                <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 animate-slide-up">
+                    <div class="flex items-center mb-6">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-gold mr-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                        </svg>
+                        <h3 class="text-2xl font-serif font-medium text-gray-800">Reception</h3>
+                    </div>
+                    <div class="pl-14">
+                        <p class="text-lg text-gray-700 mb-2">Thursday, August 20, 2025</p>
+                        <p class="text-lg text-gray-700 mb-2">6:00 PM - 11:00 PM</p>
+                        <p class="text-gray-600 mb-6">The Crystal Gardens, 500 Lake Shore Drive, Chicago</p>
+                        <a href="https://maps.google.com" target="_blank" class="inline-block px-6 py-2 bg-gold text-white rounded-full hover:bg-opacity-90 transition duration-300">
+                            View Location
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Countdown Section -->
+    <section class="py-20 px-4 bg-white">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-3xl md:text-4xl font-serif font-medium text-gray-800 mb-16 animate-slide-up">Counting the Days</h2>
+            
+            <div id="countdown" class="grid grid-cols-4 gap-4 md:gap-8 animate-fade-in">
+                <div class="bg-cream p-4 rounded-lg shadow">
+                    <div class="text-4xl md:text-6xl font-bold text-gold" id="days">00</div>
+                    <div class="text-gray-600 mt-2">Days</div>
+                </div>
+                <div class="bg-cream p-4 rounded-lg shadow">
+                    <div class="text-4xl md:text-6xl font-bold text-gold" id="hours">00</div>
+                    <div class="text-gray-600 mt-2">Hours</div>
+                </div>
+                <div class="bg-cream p-4 rounded-lg shadow">
+                    <div class="text-4xl md:text-6xl font-bold text-gold" id="minutes">00</div>
+                    <div class="text-gray-600 mt-2">Minutes</div>
+                </div>
+                <div class="bg-cream p-4 rounded-lg shadow">
+                    <div class="text-4xl md:text-6xl font-bold text-gold" id="seconds">00</div>
+                    <div class="text-gray-600 mt-2">Seconds</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<form id="wishes-form" action="https://formsubmit.co/srasyid2007@gmail.com" method="POST" class="bg-white p-8 rounded-lg shadow-md">
+    <!-- Tambahkan token anti-spam -->
+    <input type="hidden" name="_captcha" value="false">
+    <input type="hidden" name="_subject" value="Wedding Wish dari Pengunjung">
+    <input type="hidden" name="_template" value="table">
+    
+    <!-- Input fields harus memiliki ID untuk JavaScript -->
+    <div class="mb-6">
+        <label for="name">Your Name*</label>
+        <input type="text" id="name" name="name" required class="w-full p-2 border rounded">
+    </div>
+    
+    <div class="mb-6">
+        <label for="email">Your Email*</label>
+        <input type="email" id="email" name="email" required class="w-full p-2 border rounded">
+    </div>
+    
+    <div class="mb-6">
+        <label for="message">Message*</label>
+        <textarea id="message" name="message" required class="w-full p-2 border rounded"></textarea>
+    </div>
+    
+    <button type="submit" class="bg-gold text-white py-3 px-8 rounded-full">
+        Send Wishes
+    </button>
+</form>
+
+<div id="thank-you" class="hidden text-center p-4 bg-green-100 text-green-800">
+    Thank you message here...
+</div>
+        
+        <div id="thank-you" class="hidden text-center mt-8 p-6 bg-green-100 text-green-800 rounded-lg">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 mx-auto mb-4 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            <h3 class="text-2xl font-serif font-medium mb-2">Thank You!</h3>
+            <p>Your message has been sent to srasyid2007@gmail.com</p>
+        </div>
+    </div>
+</section>
+
+    <!-- Footer -->
+    <footer class="py-12 px-4 bg-gray-800 text-white">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-2xl font-serif font-medium mb-6">Daniel & Maya</h2>
+            <p class="mb-6">August 20, 2025 • The Crystal Gardens, Chicago</p>
+            <p class="text-gold mb-8">"In all the world, there is no heart for me like yours. In all the world, there is no love for you like mine."</p>
+            <p class="text-sm text-gray-400">With love from the Christopher & Parker families</p>
+        </div>
+    </footer>
+
+  <script>
+    // ====================== BASIC PAGE FUNCTIONALITY ======================
+    // Smooth scrolling when clicking navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+    });
+
+    // ====================== COUNTDOWN TIMER ======================
+    function updateCountdown() {
+        const weddingDate = new Date('August 20, 2025 14:00:00').getTime();
+        const now = new Date().getTime();
+        const timeLeft = weddingDate - now;
+
+        // Calculate days, hours, minutes, seconds
+        document.getElementById('days').textContent = Math.floor(timeLeft / (1000 * 60 * 60 * 24)).toString().padStart(2, '0');
+        document.getElementById('hours').textContent = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)).toString().padStart(2, '0');
+        document.getElementById('minutes').textContent = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60)).toString().padStart(2, '0');
+        document.getElementById('seconds').textContent = Math.floor((timeLeft % (1000 * 60)) / 1000).toString().padStart(2, '0');
+    }
+    setInterval(updateCountdown, 1000);
+    updateCountdown(); // Run immediately
+
+   // ====================== WISHES FORM WITH EMAIL ======================
+document.getElementById('wishes-form').addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const form = e.target;
+    
+    // Tampilkan pesan thank you
+    form.style.display = 'none';
+    document.getElementById('thank-you').classList.remove('hidden');
+    
+    try {
+        // Kirim data ke Formsubmit
+        const response = await fetch(form.action, {
+            method: 'POST',
+            body: new FormData(form),
+            headers: { 'Accept': 'application/json' }
+        });
+        
+        if (response.ok) {
+            console.log('Sukses! Cek inbox/spam srasyid2007@gmail.com');
+        } else {
+            console.error('Gagal mengirim:', await response.text());
+        }
+    } catch (error) {
+        console.error('Error:', error);
+        // Tampilkan pesan error ke user jika perlu
+    }
+});
+
+    // ====================== MUSIC PLAYER ======================
+    const musicPlayer = document.getElementById('music-player');
+    const audio = document.getElementById('wedding-music');
+    let isPlaying = false;
+
+    musicPlayer.addEventListener('click', function() {
+        if (isPlaying) {
+            audio.pause();
+            document.getElementById('play-icon').classList.remove('hidden');
+            document.getElementById('pause-icon').classList.add('hidden');
+        } else {
+            audio.play();
+            document.getElementById('play-icon').classList.add('hidden');
+            document.getElementById('pause-icon').classList.remove('hidden');
+        }
+        isPlaying = !isPlaying;
+    });
+
+    // ====================== JOURNEY CAROUSEL ======================
+    const carousel = document.getElementById('journey-carousel');
+    if (carousel) {
+        // Arrow navigation
+        document.querySelector('.journey-next').addEventListener('click', () => {
+            carousel.scrollBy({ left: 300, behavior: 'smooth' });
+        });
+        document.querySelector('.journey-prev').addEventListener('click', () => {
+            carousel.scrollBy({ left: -300, behavior: 'smooth' });
+        });
+
+        // Touch swipe (mobile)
+        let touchStartX = 0;
+        carousel.addEventListener('touchstart', (e) => touchStartX = e.touches[0].clientX);
+        carousel.addEventListener('touchend', (e) => {
+            const touchEndX = e.changedTouches[0].clientX;
+            if (touchStartX - touchEndX > 50) carousel.scrollBy({ left: 300, behavior: 'smooth' }); // Swipe left
+            if (touchEndX - touchStartX > 50) carousel.scrollBy({ left: -300, behavior: 'smooth' }); // Swipe right
+        });
+    }
+
+    // ====================== LIKE BUTTONS ======================
+    document.querySelectorAll('.like-btn').forEach(btn => {
+        btn.addEventListener('click', function() {
+            const regularHeart = this.querySelector('.far');
+            const solidHeart = this.querySelector('.fas');
+            
+            regularHeart.classList.toggle('hidden');
+            solidHeart.classList.toggle('hidden');
+            
+            if (!regularHeart.classList.contains('hidden')) return;
+            
+            solidHeart.classList.add('like-animation');
+            setTimeout(() => solidHeart.classList.remove('like-animation'), 600);
+        });
+    });
+
+    // ====================== SCROLL ANIMATIONS ======================
+    function checkScroll() {
+        document.querySelectorAll('.animate-slide-up, .animate-fade-in').forEach(el => {
+            if (el.getBoundingClientRect().top < window.innerHeight - 100) {
+                el.style.opacity = '1';
+                if (el.classList.contains('animate-slide-up')) {
+                    el.style.transform = 'translateY(0)';
+                }
+            }
+        });
+    }
+
+    // Initialize animations
+    document.querySelectorAll('.animate-slide-up').forEach(el => {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(20px)';
+    });
+    window.addEventListener('scroll', checkScroll);
+    window.addEventListener('load', checkScroll);
+</script>
+</body>
+</html>
